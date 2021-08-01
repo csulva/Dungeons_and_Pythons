@@ -16,9 +16,57 @@ set_of_options = set()
 inventory_of_items = ['fists']
 
 #functions
+def go_back(choice):
+    if choice == 'exit' or choice == 'flee':
+        choice = input(('You are back to the start.\nPick a door, right, left, or center: '))
+        if choice == 'right':
+            go_right(choice)
+        if choice == 'left':
+            go_left(choice)
+
+
+def explore_right(choice):
+    if choice == 'explore'.lower():
+        print('Oh no, there is a dragon!')
+        choice = input('Do you want to fight or flee? ')
+        if choice == 'fight'.lower():
+            print(f'You elect to try and fight the dragon with {inventory_of_items[-1]}.')
+            fight_dragon()
+            quit()
+        if choice == 'flee'.lower():
+            go_back(choice)
+
+def go_right(choice):
+    if choice == 'right'.lower():
+        choice = input(('You are now entering the right room.\nDo you want to explore or exit? '))
+        if choice == 'exit'.lower():
+            go_back(choice)
+        if choice == 'explore'.lower():
+            explore_right(choice)
+
+def go_left(choice):
+    if choice == 'left'.lower():
+        choice = input(('You are now entering the left room.\nDo you want to explore or exit? '))
+    if choice == 'exit':
+        go_back(choice)
+    if choice == 'explore':
+        explore_left(choice)
+
+def explore_left(choice):
+    global inventory_of_items
+    if choice == 'explore'.lower():
+        print('You have found a sword!')
+        inventory_of_items.append('sword')
+        choice = input('Do you choose to explore or exit? ')
+        if choice == 'exit'.lower():
+            go_back(choice)
+        if choice == 'explore'.lower():
+            print('Oh no, you found a trap and were hit by a poisonous dart! You lose.')
+            quit()
+
 def fight_dragon():
     global inventory_of_items
-    if 'sword' and 'axe' not in inventory_of_items:
+    if 'sword' not in inventory_of_items and 'axe' not in inventory_of_items:
         choice = input('Press enter to roll a two-sided die: ')
         x = random.randint(1, 2)
         print(f"You rolled a {x}")
@@ -42,10 +90,9 @@ def fight_dragon():
             elif y > x:
                 print("Oh no, the dragon beat you and you lose all your items! Start over.")
                 inventory_of_items = []
-                print(inventory_of_items)
                 quit()
         quit()
-    if 'sword' or 'axe' in inventory_of_items:
+    if 'sword' in inventory_of_items or 'axe' in inventory_of_items:
         choice = input('Press enter to roll an 8-sided die: ')
         x = random.randint(1, 8)
         print(f"You rolled a {x}")
@@ -72,30 +119,14 @@ def fight_dragon():
                 print(inventory_of_items)
                 quit()
 
-def go_back(choice):
-    if choice == 'exit':
-        choice = input(('You are back to the start.\nPick a door, right left, or center: '))
-
-def explore_right(choice):
-    if choice == 'explore':
-        print('Oh no, there is a dragon!')
-        choice = input('Do you want to fight or flee? ')
-        if choice == 'fight':
-            print(f'You elect to try and fight the dragon with {inventory_of_items[-1]}.')
-            fight_dragon()
-            quit()
-
-def go_right(choice):
-    if choice == 'right':
-        choice = input(('You are now entering the right room.\nDo you want to explore or exit? '))
-        if choice == 'exit':
-            go_back(choice)
-        if choice == 'explore':
-            explore_right(choice)
-
-
 while choice != 'quit'.lower():
     choice == choice
     if choice == 'right':
-        (go_right(choice))
+        go_right(choice)
+        if choice == 'exit'.lower():
+            go_back(choice)
+    if choice == 'left':
+        go_left(choice)
+        if choice == 'exit'.lower():
+            go_back(choice)
 
