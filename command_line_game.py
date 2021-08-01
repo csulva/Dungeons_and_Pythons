@@ -30,38 +30,39 @@ right_room = set(['explore', 'exit'])
 center_room = set(['explore', 'exit'])
 state = 'room'
 
+def fight_dragon():
+    choice = input('Press enter to roll a 6-sided die: ')
+    x = random.randint(1, 6)
+    print(f"You rolled a {x}")
+    choice = input("Press enter again to see the dragon's roll: ")
+    y = random.randint(1, 6)
+    print(f"The dragon rolled a {y}")
+    if x > y:
+        print('Yay you killed the dragon. You win!')
+    elif y > x:
+        print("Oh no, the dragon beat you and you lose all your items! Start over.")
+    else:
+        choice = input("It's a draw, roll again: ")
+        x = random.randint(1, 6)
+        print(f"You rolled a {x}")
+        choice = input("Press enter again to see the dragon's roll: ")
+        y = random.randint(1, 6)
+        print(f"The dragon rolled a {y}")
+        if x > y:
+            print('Yay you killed the dragon with the sword. You win!')
+            #break
+        elif y > x:
+            print("Oh no, the dragon beat you and you lose all your items! Start over.")
+            #break
+
 while choice == None:
     if choice_1 == right:
         choice = input('You have chosen the right door... Do you explore or exit? ').lower()
-        choice_1 = input('Pick a door, right, left, or center: ').lower()
         if choice == 'explore':
             print("Oh no, you've encountered a dragon!")
             choice = input('Would you like to fight or flee? ').lower()
             if choice == 'fight':
-               if choice == 'fight':
-                    choice = input('Press enter to roll a 6-sided die: ')
-                    x = random.randint(1, 6)
-                    print(f"You rolled a {x}")
-                    choice = input("Press enter again to see the dragon's roll: ")
-                    y = random.randint(1, 6)
-                    print(f"The dragon rolled a {y}")
-                    if x > y:
-                        print('Yay you killed the dragon. You win!')
-                    elif y > x:
-                        print("Oh no, the dragon beat you and you lose all your items! Start over.")
-                    else:
-                        choice = input("It's a draw, roll again: ")
-                        x = random.randint(1, 6)
-                        print(f"You rolled a {x}")
-                        choice = input("Press enter again to see the dragon's roll: ")
-                        y = random.randint(1, 6)
-                        print(f"The dragon rolled a {y}")
-                        if x > y:
-                            print('Yay you killed the dragon with the sword. You win!')
-                            break
-                        elif y > x:
-                            print("Oh no, the dragon beat you and you lose all your items! Start over.")
-                            break
+                fight_dragon()
             elif choice == 'flee':
                 print(intro)
         elif choice == 'exit':
