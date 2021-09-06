@@ -359,6 +359,9 @@ request = requests.get(trivia_url).json()
 question = request['results'][0]['question']
 answer = request['results'][0]['correct_answer']
 def answer_trivia():
+    """[You must answer the true/false trivia question provided by the API random trivia question generator.
+    If you answer correctly, you can go through the door.]
+    """
     print('In order to enter the left room, you must correctly answer a board-game themed trivia question with either "True" or "False"...')
     time.sleep(3)
     print('Here is your question...')
