@@ -19,7 +19,7 @@ elif len(name) < 2:
     max_len = min_len
 
 # Ping the Uzby API to create a new random name for your player,
-#   using the length of their given name as input
+#  using the length of their given name as input
 url = f"https://uzby.com/api.php?min={min_len}&max={max_len}"
 
 request = requests.get(url)
