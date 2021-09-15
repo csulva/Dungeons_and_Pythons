@@ -64,23 +64,83 @@ class Char:
         print(f'You now have {self.mana} mana!')
 
 # Define opponent class
-class Monster:
+class Opponent:
     def __init__(self, name, type, health, damage):
         self.name = name
         self.type = type
         self.health = health
         self.damage = damage
+    
+    def attack(self, other):
+        attack = input(f'{self.name} attacks you with a crushing blow! Let\'s see if it hits: ')
+        crushing_blow = random.randint(1, 6)
+        if crushing_blow == 6:
+            other.health == 0
+            print(f'It\'s a hit! {self.name} has killed you. Restore your health ASAP!')
+        else:
+            counter = input(f'{self.name} missed you and you have a chance to counter. Hit enter to see if you hit with crushing blow: ')
+            time.sleep(1)
+            crushing_blow = random.randint(1, 6)
+            if crushing_blow == 1 or crushing_blow == 6:
+                self.health = 0
+                print(f'It\'s a hit! You have killed {self.name}. You win!')
+            else:
+                print(f'You missed and {self.name} has fled! Go fight {self.name} with your battle function.')
 
     def __str__(self):
-        return f'{self.name} is a {self.type}, with {self.health}, capable of {self.damage} damage.'
+        return f'{self.name} is a {self.type}, with {self.health} health, capable of {self.damage} damage.'
 
+class WeakOpponent(Opponent):
+    def __init__(self, name, type, health, damage):
+        super().__init__(name, type, health, damage)
+
+    def attack(self, other):
+        attack = input(f'{self.name} attacks you with a crushing blow! Let\'s see if it hits: ')
+        crushing_blow = random.randint(1, 6)
+        if crushing_blow == 6:
+            other.health /= 2
+            print(f'It\'s a hit! You lost half of your health. Restore your health ASAP!')
+        else:
+            counter = input(f'{self.name} missed you and you have a chance to counter. Hit enter to see if you hit with crushing blow: ')
+            time.sleep(1)
+            crushing_blow = random.randint(1, 6)
+            if crushing_blow == 1 or crushing_blow == 6:
+                self.health = 0
+                print(f'It\'s a hit! You have killed {self.name}. You win!')
+            else:
+                print(f'You missed and {self.name} has fled! Go fight {self.name} with your battle function.')
+class Boss(Opponent):
+    def __init__(self, name, type, health, damage):
+        super().__init__(name, type, health, damage)
+    
+    def attack(self, other):
+        attack = input(f'{self.name} attacks you with a crushing blow! Let\'s see if it hits: ')
+        crushing_blow = random.randint(1, 6)
+        if crushing_blow == 6 or crushing_blow == 5:
+            other.health == 0
+            print(f'It\'s a hit! {self.name} has killed you. Restore your health ASAP!')
+        else:
+            counter = input(f'{self.name} missed you and you have a chance to counter. Hit enter to see if you hit with crushing blow: ')
+            time.sleep(1)
+            crushing_blow = random.randint(1, 6)
+            if crushing_blow == 1 or crushing_blow == 6:
+                self.health = 0
+                print(f'It\'s a hit! You have killed {self.name}. You win!')
+            else:
+                print(f'You missed and {self.name} has fled! Go fight {self.name} with your battle function.')
 
 paladin = Char('Pally', 'Paladin', 100, 100, 0, 'sword', 5)
 barbarian = Char('Barb_1', 'Barbarian', 120, 120, 0, 'axe', 6)
 sorceress = Char('Sorc', 'Sorceress', 80, 80, 20, 'wand', 4)
 
-drax = Monster('Drax', 'Dragon', 100, 5)
-andy = Monster('Andy', 'Spider', 120, 4)
-damien = Monster('Damien', 'Demon', 70, 8)
+drax = Boss('Drax', 'Dragon', 100, 5)
+andy = Boss('Andy', 'Spider', 120, 4)
+damien = Boss('Damien', 'Demon', 70, 8)
 
-barbarian.battle(damien)
+peon = WeakOpponent('Peon_1', 'Peon', 50, 2)
+worm = WeakOpponent('Wormy', 'Worm', 60, 3)
+ghoul = WeakOpponent('Ghouly', 'Ghoul', 120, 1)
+
+print(ghoul)
+
+sorceress.battle(ghoul)
