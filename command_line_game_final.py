@@ -8,7 +8,6 @@ intro = (f'Hello {name} welcome to the world of DnD. If at any point you get stu
 print(intro)
 time.sleep(3)
 # Present them with a choice between three doors.
-choice = input('Pick a door, right, left, or center: ').lower()
 set_of_options = set()
 inventory_of_items = ['fists']
 
@@ -328,16 +327,24 @@ def fight_dragon():
                 inventory_of_items = []
                 quit()
 
-while choice != 'quit'.lower():
-    choice == choice
-    if choice == 'right':
-        go_right(choice)
-        if choice == 'exit'.lower():
-            go_back(choice)
-    if choice == 'left':
-        go_left(choice)
-        if choice == 'exit'.lower():
-            go_back(choice)
-    if choice == 'center':
-        go_center(choice)
-
+while True:
+# choice != 'quit'.lower():
+    choice = input('Pick a door, right, left, or center: ').lower()
+    try: 
+        choice == choice
+        if choice == 'right':
+            go_right(choice)
+            if choice == 'exit'.lower():
+                go_back(choice)
+        if choice == 'left':
+            go_left(choice)
+            if choice == 'exit'.lower():
+                go_back(choice)
+        if choice == 'center':
+            go_center(choice)
+        elif choice == 'quit'.lower():
+            quit()
+    except:
+        print('Try again')
+    else:
+        print('Try again')
