@@ -1,6 +1,9 @@
 # Command_Line_Game
 Adventure game you can play on command line
 
+## Play the game
+Play on [Repl.it](https://replit.com/@ChrisSulva/CommandLineGame#.replit)
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requests to integrate API data.
