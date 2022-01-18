@@ -2,6 +2,7 @@
 Adventure game you can play on command line
 
 ## Play the game
+Welcome! Battle monsters and collect items in this adventure-based game created to be played on the command line. Simply follow the steps by typing your responses to move through the game. Type "quit" or click "Run" to reset the game. 
 Play on [Repl.it](https://replit.com/@ChrisSulva/CommandLineGame#.replit).
 When you open the link, click "Run" as many times as you want to play.
 
