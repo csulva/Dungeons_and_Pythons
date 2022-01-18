@@ -19,3 +19,4 @@ def answer_trivia():
         else:
             pass
 
+answer_trivia()
