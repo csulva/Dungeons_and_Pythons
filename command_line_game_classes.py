@@ -141,6 +141,4 @@ peon = WeakOpponent('Peon_1', 'Peon', 50, 2)
 worm = WeakOpponent('Wormy', 'Worm', 60, 3)
 ghoul = WeakOpponent('Ghouly', 'Ghoul', 120, 1)
 
-print(ghoul)
-
 sorceress.battle(ghoul)
