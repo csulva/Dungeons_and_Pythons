@@ -45,6 +45,10 @@ import random
 gold = random.randint(10, 100)
 
 ```
+## Contributing
+Pull requests are welcome as I'd love to continue adding to the game(s) and diving deeper into the story. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
 
 ## References
 [CodingNomads Python Course](https://codingnomads.co/career-track/professional-python-web-development-course)
