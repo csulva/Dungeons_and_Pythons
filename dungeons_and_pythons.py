@@ -1,19 +1,25 @@
+# Dungeons and Pythons
+
+# Imports
 import random
 import time
 name = None
+
 # Ask the player for their name.
 name = input("Hello, what is your name? ")
+
 # Display a message that greets them and introduces them to the game world.
 intro = (f'Hello {name} welcome to the world of DnD. If at any point you get stuck, type "quit" to escape the dungeon.')
 print(intro)
 time.sleep(3)
+
 # Present them with a choice between three doors.
 set_of_options = set()
 inventory_of_items = ['fists']
 choice = input('Pick a door, right, left, or center: ').lower()
 
 
-#functions
+# Functions
 def go_back(choice):
     """[When go_back is initated, it takes you back
     to your original choices of doors]
@@ -330,6 +336,7 @@ def fight_dragon():
                 inventory_of_items = []
                 quit()
 
+# Run the game
 while choice != 'quit'.lower():
     choice == choice
     if choice == 'right':
