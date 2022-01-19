@@ -1,4 +1,4 @@
-# Dungeons_and_Pythons
+# Dungeons and Pythons
 Dungeons and Pythons is an adventure game you can play on command line.
 
 ## Play the game
