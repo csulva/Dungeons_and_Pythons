@@ -12,7 +12,7 @@ The file "command_line_game_API.py" is exactly the same as the command-line-game
 
 If you want to try using a trivia game to integrate into your command-line-game, you can find that information in the file: "API_Trivia.py". Here, it will show you how to connect to the "Open Trivia Database" to randomize a question/answer pair and try to solve it on the command line. For my trivia category, I selected "Entertainment: Board Games".
 
-I've also created a command-line game with classes that can battle each other based on their "classes" as seen in the "command_line_game_classes.py" file. You can play this game on [Repl.it](https://replit.com/@ChrisSulva/CommandLineGamewithClasses#main.py) as well. To do so, simply pick two characters (variables) at the bottom and type {character1}.battle{(character2)} and click "Run" to initiate battle between the two classes. You will roll die for each until one loses all their health.
+I've also created a command-line game with classes that can battle each other based on their "classes" as seen in the "command_line_game_classes.py" file. You can play this game on [Repl.it](https://replit.com/@ChrisSulva/CommandLineGamewithClasses#main.py) as well. To do so, simply pick two characters (variables) at the bottom and type *character1*.battle(*character2*) and click "Run" to initiate battle between the two classes. You will roll die for each until one loses all their health.
 
 ## Installation
 
@@ -50,3 +50,5 @@ gold = random.randint(10, 100)
 [CodingNomads Python Course](https://codingnomads.co/career-track/professional-python-web-development-course)
 
 [Open Trivia Database](https://opentdb.com/)
+
+[Uzby API](https://uzby.com/api) for randomizing names
