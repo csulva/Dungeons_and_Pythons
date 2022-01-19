@@ -1,3 +1,6 @@
+# Dungeons and APIs
+
+# Imports
 import random
 import time
 import requests
@@ -38,7 +41,7 @@ choice = input('Pick a door, right, left, or center: ').lower()
 set_of_options = set()
 inventory_of_items = ['fists']
 
-#functions
+# Functions
 def go_back(choice):
     """[When go_back is initated, it takes you back
     to your original choices of doors]
@@ -378,6 +381,7 @@ def answer_trivia():
         else:
             go_back()
 
+# Run the game
 while choice != 'quit'.lower():
     choice == choice
     if choice == 'right':
