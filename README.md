@@ -51,7 +51,7 @@ Pull requests are welcome as I'd love to continue adding to the game(s) and divi
 Please make sure to update tests as appropriate.
 
 ## References
-[CodingNomads Python Course](https://codingnomads.co/career-track/professional-python-web-development-course)
+[CodingNomads Python Web Development](https://codingnomads.co/career-track/professional-python-web-development-course)
 
 [Open Trivia Database](https://opentdb.com/)
 
