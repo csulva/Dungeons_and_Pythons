@@ -6,14 +6,6 @@ Welcome to Dungeons and Pythons! Battle monsters and collect items in this adven
 Play on [Repl.it](https://replit.com/@ChrisSulva/CommandLineGame#.replit).
 When you open the link, click "Run" as many times as you want to play.
 
-## Other features
-
-The file "dungeons_and_apis.py" is exactly the same as the command-line game above, but it uses the requests package to access the Uzby API and randomize your name based on the name you provide in the command line when you run the file.
-
-If you want to try using a trivia game to integrate into your command-line game, you can find that information in the file: "api_trivia.py". Here, it will show you how to connect to the "Open Trivia Database" to randomize a question/answer pair and try to solve it on the command line. For my trivia category, I selected "Entertainment: Board Games".
-
-I've also created a command-line game with classes that can battle each other based on their "classes" as seen in the "battle_classes.py" file. You can play this game on [Repl.it](https://replit.com/@ChrisSulva/CommandLineGamewithClasses#main.py) as well. To do so, simply pick two characters (variables) at the bottom and type *character1*.battle(*character2*) and click "Run" to initiate battle between the two classes. You will roll die for each until one loses all their health.
-
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install requests to integrate API data.
@@ -22,6 +14,7 @@ Use the package manager [pip](https://pip.pypa.io/en/stable/) to install request
 pip install requests
 ```
 You may also want to do this in a virtual environment.
+
 
 ## Usage
 
@@ -45,6 +38,15 @@ import random
 gold = random.randint(10, 100)
 
 ```
+
+## Other features
+
+The file "dungeons_and_apis.py" is exactly the same as the command-line game above, but it uses the requests package to access the Uzby API and randomize your name based on the name you provide in the command line when you run the file.
+
+If you want to try using a trivia game to integrate into your command-line game, you can find that information in the file: "api_trivia.py". Here, it will show you how to connect to the "Open Trivia Database" to randomize a question/answer pair and try to solve it on the command line. For my trivia category, I selected "Entertainment: Board Games".
+
+I've also created a command-line game with classes that can battle each other based on their "classes" as seen in the "battle_classes.py" file. You can play this game on [Repl.it](https://replit.com/@ChrisSulva/CommandLineGamewithClasses#main.py) as well. To do so, simply pick two characters (variables) at the bottom and type *character1*.battle(*character2*) and click "Run" to initiate battle between the two classes. You will roll die for each until one loses all their health.
+
 ## Contributing
 Pull requests are welcome as I'd love to continue adding to the game(s) and diving deeper into the story. For major changes, please open an issue first to discuss what you would like to change.
 
